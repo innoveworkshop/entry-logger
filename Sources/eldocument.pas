@@ -15,10 +15,11 @@ type
       function GetColumn(Index: Integer): TColumn;
 
     public
-      property Columns[Index: Integer]: TColumn read GetColumn;
+      property Column[Index: Integer]: TColumn read GetColumn;
 
       constructor Create; overload;
 
+      function ColumnsLength: Integer;
       function ToString: String; override;
   end;
 
@@ -41,6 +42,12 @@ end;
 function TELDocument.GetColumn(Index: Integer): TColumn;
 begin
   GetColumn := FColumns[Index];
+end;
+
+{ Gets the length of the columns array. }
+function TELDocument.ColumnsLength: Integer;
+begin
+  ColumnsLength := Length(FColumns);
 end;
 
 { Gets a string representation of this object. }

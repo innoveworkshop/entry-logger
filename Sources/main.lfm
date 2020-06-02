@@ -56,6 +56,10 @@ object frmMain: TfrmMain
       object mniModel: TMenuItem
         Caption = 'Model'
       end
+      object mniSheet: TMenuItem
+        Caption = 'Spreadsheet'
+        OnClick = mniSheetClick
+      end
     end
   end
 end

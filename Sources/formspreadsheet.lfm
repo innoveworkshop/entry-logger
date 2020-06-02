@@ -1,0 +1,27 @@
+object frmSpreadsheet: TfrmSpreadsheet
+  Left = 778
+  Height = 452
+  Top = 181
+  Width = 650
+  Caption = 'Data Spreadsheet'
+  ClientHeight = 452
+  ClientWidth = 650
+  LCLVersion = '2.0.8.0'
+  object grdSheet: TStringGrid
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 452
+    Top = 0
+    Width = 650
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ColCount = 1
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goRowSelect, goColSpanning, goSmoothScroll, goScrollKeepVisible, goHeaderPushedLook, goRowHighlight]
+    RowCount = 1
+    TabOrder = 0
+  end
+end
