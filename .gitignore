@@ -1,0 +1,18 @@
+# Lazarus files.
+*.o
+*.ppu
+*.bak
+*.tpu
+*.$$$
+*.exe
+*.lps
+backup/
+lib/
+
+# Test files.
+test.eld
+
+# Misc.
+*.pdnBak
+.DS_Store
+
