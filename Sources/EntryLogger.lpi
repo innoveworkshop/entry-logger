@@ -31,7 +31,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="4">
       <Unit0>
         <Filename Value="EntryLogger.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -44,6 +44,16 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Main"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="eldocument.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ELDocument"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="eldocument.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ELDocument"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

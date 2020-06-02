@@ -5,13 +5,14 @@ unit Main;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, Grids;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, Grids, StdCtrls;
 
 type
 
   { TfrmMain }
 
   TfrmMain = class(TForm)
+    txtConsole: TMemo;
     mnuWindow: TMenuItem;
     mniModel: TMenuItem;
     mnuFile: TMenuItem;
@@ -22,8 +23,7 @@ type
     mniExit: TMenuItem;
     N1: TMenuItem;
     mnuMain: TMainMenu;
-    StringGrid1: TStringGrid;
-    procedure mniSaveAsClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
 
   public
@@ -39,9 +39,10 @@ implementation
 
 { TfrmMain }
 
-procedure TfrmMain.mniSaveAsClick(Sender: TObject);
+{ Form created event. }
+procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-
+  txtConsole.Append('Welcome to Entry Logger!');
 end;
 
 end.
