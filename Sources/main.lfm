@@ -1,0 +1,58 @@
+object frmMain: TfrmMain
+  Left = 525
+  Height = 570
+  Top = 218
+  Width = 788
+  Caption = 'Entry Logger'
+  ClientHeight = 531
+  ClientWidth = 788
+  DesignTimePPI = 192
+  Menu = mnuMain
+  LCLVersion = '2.0.8.0'
+  object StringGrid1: TStringGrid
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 531
+    Top = 0
+    Width = 788
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    TabOrder = 0
+  end
+  object mnuMain: TMainMenu
+    left = 368
+    top = 280
+    object mnuFile: TMenuItem
+      Caption = '&File'
+      object mniNew: TMenuItem
+        Caption = '&New'
+      end
+      object mniOpen: TMenuItem
+        Caption = '&Open'
+      end
+      object mniSave: TMenuItem
+        Caption = '&Save'
+      end
+      object mniSaveAs: TMenuItem
+        Caption = 'Save As...'
+        OnClick = mniSaveAsClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object mniExit: TMenuItem
+        Caption = 'E&xit'
+      end
+    end
+    object mnuWindow: TMenuItem
+      Caption = 'Window'
+      object mniModel: TMenuItem
+        Caption = 'Model'
+      end
+    end
+  end
+end
