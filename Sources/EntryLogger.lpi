@@ -31,7 +31,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="5">
       <Unit0>
         <Filename Value="EntryLogger.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -50,10 +50,15 @@
         <UnitName Value="ELDocument"/>
       </Unit2>
       <Unit3>
-        <Filename Value="eldocument.pas"/>
+        <Filename Value="column.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="ELDocument"/>
+        <UnitName Value="Column"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="column.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Column"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
