@@ -1,11 +1,11 @@
 object frmSpreadsheet: TfrmSpreadsheet
   Left = 778
-  Height = 452
+  Height = 374
   Top = 181
-  Width = 650
+  Width = 574
   Caption = 'Data Spreadsheet'
-  ClientHeight = 452
-  ClientWidth = 650
+  ClientHeight = 374
+  ClientWidth = 574
   LCLVersion = '2.0.8.0'
   object grdSheet: TStringGrid
     AnchorSideLeft.Control = Owner
@@ -15,11 +15,12 @@ object frmSpreadsheet: TfrmSpreadsheet
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 452
+    Height = 374
     Top = 0
-    Width = 650
+    Width = 574
     Anchors = [akTop, akLeft, akRight, akBottom]
     ColCount = 1
+    FixedCols = 0
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goRowSelect, goColSpanning, goSmoothScroll, goScrollKeepVisible, goHeaderPushedLook, goRowHighlight]
     RowCount = 1
     TabOrder = 0
