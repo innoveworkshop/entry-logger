@@ -37,5 +37,19 @@ namespace EntryLogger {
 			SpreadsheetForm frmSpreadsheet = new SpreadsheetForm(elDocument);
 			frmSpreadsheet.Show();
 		}
+
+		private void MainForm_Activated(object sender, EventArgs e) {
+			// Status.
+			chkEntryModel.Checked = elDocument.HasEntryModel();
+			chkEntries.Checked = elDocument.HasEntries();
+
+			// Statistics.
+			lblColumns.Text = elDocument.Model.Count.ToString();
+			lblEntries.Text = elDocument.Entries.Count.ToString();
+		}
+
+		private void MainForm_Load(object sender, EventArgs e) {
+
+		}
 	}
 }

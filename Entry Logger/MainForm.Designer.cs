@@ -39,8 +39,18 @@
 			this.mniHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
 			this.stpStatus = new System.Windows.Forms.StatusStrip();
 			this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.grpDocStatus = new System.Windows.Forms.GroupBox();
+			this.chkEntries = new System.Windows.Forms.CheckBox();
+			this.chkEntryModel = new System.Windows.Forms.CheckBox();
+			this.grpStatistics = new System.Windows.Forms.GroupBox();
+			this.lblEntries = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.lblColumns = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.mnuMain.SuspendLayout();
 			this.stpStatus.SuspendLayout();
+			this.grpDocStatus.SuspendLayout();
+			this.grpStatistics.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// mnuMain
@@ -51,7 +61,7 @@
             this.mniHelp});
 			this.mnuMain.Location = new System.Drawing.Point(0, 0);
 			this.mnuMain.Name = "mnuMain";
-			this.mnuMain.Size = new System.Drawing.Size(533, 24);
+			this.mnuMain.Size = new System.Drawing.Size(529, 24);
 			this.mnuMain.TabIndex = 0;
 			this.mnuMain.Text = "menuStrip1";
 			// 
@@ -158,7 +168,7 @@
             this.statusLabel});
 			this.stpStatus.Location = new System.Drawing.Point(0, 302);
 			this.stpStatus.Name = "stpStatus";
-			this.stpStatus.Size = new System.Drawing.Size(533, 22);
+			this.stpStatus.Size = new System.Drawing.Size(529, 22);
 			this.stpStatus.TabIndex = 1;
 			this.stpStatus.Text = "statusStrip1";
 			// 
@@ -167,19 +177,109 @@
 			this.statusLabel.Name = "statusLabel";
 			this.statusLabel.Size = new System.Drawing.Size(0, 17);
 			// 
+			// grpDocStatus
+			// 
+			this.grpDocStatus.Controls.Add(this.chkEntries);
+			this.grpDocStatus.Controls.Add(this.chkEntryModel);
+			this.grpDocStatus.Location = new System.Drawing.Point(8, 27);
+			this.grpDocStatus.Name = "grpDocStatus";
+			this.grpDocStatus.Size = new System.Drawing.Size(134, 73);
+			this.grpDocStatus.TabIndex = 2;
+			this.grpDocStatus.TabStop = false;
+			this.grpDocStatus.Text = "Document Status";
+			// 
+			// chkEntries
+			// 
+			this.chkEntries.AutoSize = true;
+			this.chkEntries.Enabled = false;
+			this.chkEntries.Location = new System.Drawing.Point(6, 47);
+			this.chkEntries.Name = "chkEntries";
+			this.chkEntries.Size = new System.Drawing.Size(61, 19);
+			this.chkEntries.TabIndex = 1;
+			this.chkEntries.Text = "Entries";
+			this.chkEntries.UseVisualStyleBackColor = true;
+			// 
+			// chkEntryModel
+			// 
+			this.chkEntryModel.AutoSize = true;
+			this.chkEntryModel.Enabled = false;
+			this.chkEntryModel.Location = new System.Drawing.Point(6, 22);
+			this.chkEntryModel.Name = "chkEntryModel";
+			this.chkEntryModel.Size = new System.Drawing.Size(90, 19);
+			this.chkEntryModel.TabIndex = 0;
+			this.chkEntryModel.Text = "Entry Model";
+			this.chkEntryModel.UseVisualStyleBackColor = true;
+			// 
+			// grpStatistics
+			// 
+			this.grpStatistics.Controls.Add(this.lblEntries);
+			this.grpStatistics.Controls.Add(this.label2);
+			this.grpStatistics.Controls.Add(this.lblColumns);
+			this.grpStatistics.Controls.Add(this.label1);
+			this.grpStatistics.Location = new System.Drawing.Point(8, 106);
+			this.grpStatistics.Name = "grpStatistics";
+			this.grpStatistics.Size = new System.Drawing.Size(134, 59);
+			this.grpStatistics.TabIndex = 3;
+			this.grpStatistics.TabStop = false;
+			this.grpStatistics.Text = "Document Statistics";
+			// 
+			// lblEntries
+			// 
+			this.lblEntries.AutoSize = true;
+			this.lblEntries.Location = new System.Drawing.Point(73, 34);
+			this.lblEntries.Name = "lblEntries";
+			this.lblEntries.Size = new System.Drawing.Size(13, 15);
+			this.lblEntries.TabIndex = 3;
+			this.lblEntries.Text = "0";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(6, 34);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(48, 15);
+			this.label2.TabIndex = 2;
+			this.label2.Text = "Entries: ";
+			// 
+			// lblColumns
+			// 
+			this.lblColumns.AutoSize = true;
+			this.lblColumns.Location = new System.Drawing.Point(73, 19);
+			this.lblColumns.Name = "lblColumns";
+			this.lblColumns.Size = new System.Drawing.Size(13, 15);
+			this.lblColumns.TabIndex = 1;
+			this.lblColumns.Text = "0";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(6, 19);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(61, 15);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Columns: ";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(533, 324);
+			this.ClientSize = new System.Drawing.Size(529, 324);
+			this.Controls.Add(this.grpStatistics);
+			this.Controls.Add(this.grpDocStatus);
 			this.Controls.Add(this.stpStatus);
 			this.Controls.Add(this.mnuMain);
 			this.Name = "MainForm";
 			this.Text = "Entry Logger";
+			this.Activated += new System.EventHandler(this.MainForm_Activated);
+			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.mnuMain.ResumeLayout(false);
 			this.mnuMain.PerformLayout();
 			this.stpStatus.ResumeLayout(false);
 			this.stpStatus.PerformLayout();
+			this.grpDocStatus.ResumeLayout(false);
+			this.grpDocStatus.PerformLayout();
+			this.grpStatistics.ResumeLayout(false);
+			this.grpStatistics.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -203,6 +303,14 @@
 		private System.Windows.Forms.ToolStripMenuItem mniView;
 		private System.Windows.Forms.ToolStripMenuItem mniViewModel;
 		private System.Windows.Forms.ToolStripMenuItem mniViewSpreadsheet;
+		private System.Windows.Forms.GroupBox grpDocStatus;
+		private System.Windows.Forms.CheckBox chkEntries;
+		private System.Windows.Forms.CheckBox chkEntryModel;
+		private System.Windows.Forms.GroupBox grpStatistics;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label lblColumns;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblEntries;
 	}
 }
 

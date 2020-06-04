@@ -16,6 +16,22 @@ namespace EntryLogger {
 		}
 
 		/// <summary>
+		/// Checks if this document contains an entry model.
+		/// </summary>
+		/// <returns>True if an entry model is set.</returns>
+		public bool HasEntryModel() {
+			return Model.Count > 0;
+		}
+
+		/// <summary>
+		/// Checks if there are any entries in this document.
+		/// </summary>
+		/// <returns>True if there are any entries.</returns>
+		public bool HasEntries() {
+			return Entries.Count > 0;
+		}
+
+		/// <summary>
 		/// Returns the string representation of the document in a human-readable format.
 		/// </summary>
 		/// <returns>A nice and readable representation of the document.</returns>
