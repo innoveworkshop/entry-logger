@@ -3,8 +3,9 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Entry_Logger</RootNamespace>
+    <RootNamespace>EntryLogger</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>Entry Logger</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

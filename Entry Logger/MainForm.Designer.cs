@@ -1,4 +1,4 @@
-﻿namespace Entry_Logger {
+﻿namespace EntryLogger {
 	partial class MainForm {
 		/// <summary>
 		///  Required designer variable.
@@ -129,13 +129,14 @@
 			// 
 			this.mniViewModel.Name = "mniViewModel";
 			this.mniViewModel.Size = new System.Drawing.Size(138, 22);
-			this.mniViewModel.Text = "&Model";
+			this.mniViewModel.Text = "&EntryModel";
 			// 
 			// mniViewSpreadsheet
 			// 
 			this.mniViewSpreadsheet.Name = "mniViewSpreadsheet";
 			this.mniViewSpreadsheet.Size = new System.Drawing.Size(138, 22);
 			this.mniViewSpreadsheet.Text = "&Spreadsheet";
+			this.mniViewSpreadsheet.Click += new System.EventHandler(this.mniViewSpreadsheet_Click);
 			// 
 			// mniHelp
 			// 
