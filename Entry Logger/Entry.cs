@@ -8,6 +8,9 @@ namespace EntryLogger {
 	/// Abstration class that represents a user entry.
 	/// </summary>
 	public class Entry : List<string> {
+		public Entry(IEnumerable<string> collection) : base(collection) {
+		}
+
 		/// <summary>
 		/// Returns the string representation of the entry.
 		/// </summary>

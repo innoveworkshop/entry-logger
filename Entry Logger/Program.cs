@@ -13,7 +13,7 @@ namespace EntryLogger {
 		[STAThread]
 		static void Main() {
 			// Build a test document.
-			ELDocument elDocument = new ELDocument();
+			/*ELDocument elDocument = new ELDocument();
 			for (int i = 0; i < 5; i++) {
 				elDocument.Model.AddColumn(new Column("Column " + i));
 			}
@@ -25,13 +25,16 @@ namespace EntryLogger {
 				}
 
 				elDocument.Entries.Add(entry);
-			}
+			}*/
+
+			string exampleFile = @"C:\Users\Nathan Campos\Documents\Development\Projects\Entry Logger\Desktop\test.eld";
+			DocumentParser parser = new DocumentParser(exampleFile);
 
 			// Setup and run the application.
 			Application.SetHighDpiMode(HighDpiMode.SystemAware);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm(elDocument));
+			Application.Run(new MainForm(parser.Document));
 		}
 	}
 }

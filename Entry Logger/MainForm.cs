@@ -27,9 +27,6 @@ namespace EntryLogger {
 		/// <param name="elDocument">Entry Logger document.</param>
 		public MainForm(ELDocument elDocument) : this() {
 			this.elDocument = elDocument;
-
-			// TODO: Remove this.
-			Debug.WriteLine(elDocument.ToString());
 		}
 
 		private void mniFileExit_Click(object sender, EventArgs e) {
