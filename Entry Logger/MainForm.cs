@@ -12,7 +12,12 @@ namespace Entry_Logger {
 	public partial class MainForm : Form {
 		public MainForm() {
 			InitializeComponent();
+
+			statusLabel.Text = "Welcome to Entry Logger!";
 		}
 
+		private void mniFileExit_Click(object sender, EventArgs e) {
+			Application.Exit();
+		}
 	}
 }
