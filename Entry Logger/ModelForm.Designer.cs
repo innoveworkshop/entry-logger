@@ -28,8 +28,8 @@
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnClear = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.txtName = new System.Windows.Forms.TextBox();
+			this.cmbType = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
@@ -50,6 +50,7 @@
 			this.btnRemove.TabIndex = 1;
 			this.btnRemove.Text = "Remove";
 			this.btnRemove.UseVisualStyleBackColor = true;
+			this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
 			// 
 			// btnAdd
 			// 
@@ -59,6 +60,7 @@
 			this.btnAdd.TabIndex = 1;
 			this.btnAdd.Text = "Add";
 			this.btnAdd.UseVisualStyleBackColor = true;
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
 			// label1
 			// 
@@ -77,21 +79,22 @@
 			this.btnClear.TabIndex = 1;
 			this.btnClear.Text = "Clear";
 			this.btnClear.UseVisualStyleBackColor = true;
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
-			// textBox1
+			// txtName
 			// 
-			this.textBox1.Location = new System.Drawing.Point(12, 172);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(158, 23);
-			this.textBox1.TabIndex = 3;
+			this.txtName.Location = new System.Drawing.Point(12, 172);
+			this.txtName.Name = "txtName";
+			this.txtName.Size = new System.Drawing.Size(158, 23);
+			this.txtName.TabIndex = 3;
 			// 
-			// comboBox1
+			// cmbType
 			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(176, 172);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(122, 23);
-			this.comboBox1.TabIndex = 4;
+			this.cmbType.FormattingEnabled = true;
+			this.cmbType.Location = new System.Drawing.Point(176, 172);
+			this.cmbType.Name = "cmbType";
+			this.cmbType.Size = new System.Drawing.Size(122, 23);
+			this.cmbType.TabIndex = 4;
 			// 
 			// label2
 			// 
@@ -108,8 +111,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(310, 207);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.comboBox1);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.cmbType);
+			this.Controls.Add(this.txtName);
 			this.Controls.Add(this.btnClear);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnAdd);
@@ -129,8 +132,8 @@
 		private System.Windows.Forms.Button btnAdd;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button btnClear;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.TextBox txtName;
+		private System.Windows.Forms.ComboBox cmbType;
 		private System.Windows.Forms.Label label2;
 	}
 }

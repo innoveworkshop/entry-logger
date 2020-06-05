@@ -59,5 +59,19 @@ namespace EntryLogger {
 			if (sync)
 				elDocument.Model.Clear();
 		}
+
+		private void btnClear_Click(object sender, EventArgs e) {
+			ClearList(true);
+		}
+
+		private void btnRemove_Click(object sender, EventArgs e) {
+			elDocument.Model.RemoveAt(lstModels.SelectedIndex);
+			PopulateList();
+		}
+
+		private void btnAdd_Click(object sender, EventArgs e) {
+			elDocument.Model.Add(new Column(txtName.Text));
+			PopulateList();
+		}
 	}
 }
