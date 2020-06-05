@@ -44,5 +44,10 @@ namespace EntryLogger {
 			ModelForm frmModel = new ModelForm(elDocument);
 			frmModel.Show();
 		}
+
+		private void mniViewDataEntry_Click(object sender, EventArgs e) {
+			DataEntryForm frmEntry = new DataEntryForm(elDocument);
+			frmEntry.Show();
+		}
 	}
 }

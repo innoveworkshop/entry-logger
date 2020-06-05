@@ -33,6 +33,7 @@
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.mniFileExit = new System.Windows.Forms.ToolStripMenuItem();
 			this.mniView = new System.Windows.Forms.ToolStripMenuItem();
+			this.mniViewDataEntry = new System.Windows.Forms.ToolStripMenuItem();
 			this.mniViewModel = new System.Windows.Forms.ToolStripMenuItem();
 			this.mniViewSpreadsheet = new System.Windows.Forms.ToolStripMenuItem();
 			this.mniHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,11 +130,19 @@
 			// mniView
 			// 
 			this.mniView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mniViewDataEntry,
             this.mniViewModel,
             this.mniViewSpreadsheet});
 			this.mniView.Name = "mniView";
 			this.mniView.Size = new System.Drawing.Size(44, 20);
 			this.mniView.Text = "&View";
+			// 
+			// mniViewDataEntry
+			// 
+			this.mniViewDataEntry.Name = "mniViewDataEntry";
+			this.mniViewDataEntry.Size = new System.Drawing.Size(138, 22);
+			this.mniViewDataEntry.Text = "&Data Entry";
+			this.mniViewDataEntry.Click += new System.EventHandler(this.mniViewDataEntry_Click);
 			// 
 			// mniViewModel
 			// 
@@ -311,6 +320,7 @@
 		private System.Windows.Forms.Label lblColumns;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblEntries;
+		private System.Windows.Forms.ToolStripMenuItem mniViewDataEntry;
 	}
 }
 
