@@ -77,8 +77,39 @@ namespace EntryLogger {
 			if (txtName.Text.Length == 0)
 				return;
 
-			elDocument.Model.Add(new Column(txtName.Text, true));
+			elDocument.Model.Add(new Column(txtName.Text, cmbType.Text, true));
 			PopulateList();
+		}
+
+		private void btnMoveUp_Click(object sender, EventArgs e) {
+			int selectedIndex = lstModels.SelectedIndex;
+			if (selectedIndex <= 0)
+				return;
+
+			// Rearrange stuff.
+			Column previousColumn = elDocument.Model[selectedIndex - 1];
+			elDocument.Model[selectedIndex - 1] = elDocument.Model[selectedIndex];
+			elDocument.Model[selectedIndex] = previousColumn;
+
+			// Repopulate list and reselect the item.
+			PopulateList();
+			lstModels.SelectedIndex = selectedIndex - 1;
+		}
+
+		private void btnMoveDown_Click(object sender, EventArgs e) {
+			int selectedIndex = lstModels.SelectedIndex;
+			if ((lstModels.SelectedIndex < 0) ||
+				(lstModels.SelectedIndex == (lstModels.Items.Count - 1)))
+				return;
+
+			// Rearrange stuff.
+			Column nextColumn = elDocument.Model[selectedIndex + 1];
+			elDocument.Model[selectedIndex + 1] = elDocument.Model[selectedIndex];
+			elDocument.Model[selectedIndex] = nextColumn;
+
+			// Repopulate list and reselect the item.
+			PopulateList();
+			lstModels.SelectedIndex = selectedIndex + 1;
 		}
 	}
 }

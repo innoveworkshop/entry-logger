@@ -31,6 +31,8 @@
 			this.txtName = new System.Windows.Forms.TextBox();
 			this.cmbType = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
+			this.btnMoveUp = new System.Windows.Forms.Button();
+			this.btnMoveDown = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// lstModels
@@ -91,6 +93,11 @@
 			// cmbType
 			// 
 			this.cmbType.FormattingEnabled = true;
+			this.cmbType.Items.AddRange(new object[] {
+            "String",
+            "Integer",
+            "Float",
+            "TimeDate"});
 			this.cmbType.Location = new System.Drawing.Point(176, 172);
 			this.cmbType.Name = "cmbType";
 			this.cmbType.Size = new System.Drawing.Size(122, 23);
@@ -105,11 +112,33 @@
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Type";
 			// 
+			// btnMoveUp
+			// 
+			this.btnMoveUp.Location = new System.Drawing.Point(223, 70);
+			this.btnMoveUp.Name = "btnMoveUp";
+			this.btnMoveUp.Size = new System.Drawing.Size(75, 23);
+			this.btnMoveUp.TabIndex = 1;
+			this.btnMoveUp.Text = "Move Up";
+			this.btnMoveUp.UseVisualStyleBackColor = true;
+			this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
+			// 
+			// btnMoveDown
+			// 
+			this.btnMoveDown.Location = new System.Drawing.Point(223, 99);
+			this.btnMoveDown.Name = "btnMoveDown";
+			this.btnMoveDown.Size = new System.Drawing.Size(75, 23);
+			this.btnMoveDown.TabIndex = 1;
+			this.btnMoveDown.Text = "Move Dn";
+			this.btnMoveDown.UseVisualStyleBackColor = true;
+			this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
+			// 
 			// ModelForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(310, 207);
+			this.Controls.Add(this.btnMoveDown);
+			this.Controls.Add(this.btnMoveUp);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.cmbType);
 			this.Controls.Add(this.txtName);
@@ -135,5 +164,7 @@
 		private System.Windows.Forms.TextBox txtName;
 		private System.Windows.Forms.ComboBox cmbType;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Button btnMoveUp;
+		private System.Windows.Forms.Button btnMoveDown;
 	}
 }
