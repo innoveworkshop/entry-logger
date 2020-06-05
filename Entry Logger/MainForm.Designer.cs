@@ -61,7 +61,7 @@
             this.mniHelp});
 			this.mnuMain.Location = new System.Drawing.Point(0, 0);
 			this.mnuMain.Name = "mnuMain";
-			this.mnuMain.Size = new System.Drawing.Size(529, 24);
+			this.mnuMain.Size = new System.Drawing.Size(404, 24);
 			this.mnuMain.TabIndex = 0;
 			this.mnuMain.Text = "menuStrip1";
 			// 
@@ -140,6 +140,7 @@
 			this.mniViewModel.Name = "mniViewModel";
 			this.mniViewModel.Size = new System.Drawing.Size(138, 22);
 			this.mniViewModel.Text = "Entry &Model";
+			this.mniViewModel.Click += new System.EventHandler(this.mniViewModel_Click);
 			// 
 			// mniViewSpreadsheet
 			// 
@@ -166,9 +167,9 @@
 			// 
 			this.stpStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
-			this.stpStatus.Location = new System.Drawing.Point(0, 302);
+			this.stpStatus.Location = new System.Drawing.Point(0, 173);
 			this.stpStatus.Name = "stpStatus";
-			this.stpStatus.Size = new System.Drawing.Size(529, 22);
+			this.stpStatus.Size = new System.Drawing.Size(404, 22);
 			this.stpStatus.TabIndex = 1;
 			this.stpStatus.Text = "statusStrip1";
 			// 
@@ -271,7 +272,6 @@
 			this.Name = "MainForm";
 			this.Text = "Entry Logger";
 			this.Activated += new System.EventHandler(this.MainForm_Activated);
-			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.mnuMain.ResumeLayout(false);
 			this.mnuMain.PerformLayout();
 			this.stpStatus.ResumeLayout(false);
