@@ -10,13 +10,22 @@
 		public Column(string name) {
 			Name = name;
 		}
+		/// <summary>
+		/// Constructs a column with a name pre-populated.
+		/// </summary>
+		/// <param name="name">Name of the column.</param>
+		/// <param name="replaceSpaces">Replace the spaces in the name with dashes?</param>
+		public Column(string name, bool replaceSpaces) : this(name) {
+			if (replaceSpaces)
+				Name = name.Replace(' ', '-');
+		}
 
 		/// <summary>
 		/// Returns the string representation of the object.
 		/// </summary>
 		/// <returns>Name of the column.</returns>
 		public override string ToString() {
-			return Name;
+			return Name.Replace('-', ' ');
 		}
 
 		/// <summary>

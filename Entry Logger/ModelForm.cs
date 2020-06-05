@@ -70,7 +70,7 @@ namespace EntryLogger {
 		}
 
 		private void btnAdd_Click(object sender, EventArgs e) {
-			elDocument.Model.Add(new Column(txtName.Text));
+			elDocument.Model.Add(new Column(txtName.Text, true));
 			PopulateList();
 		}
 	}
