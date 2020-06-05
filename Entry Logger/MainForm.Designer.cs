@@ -139,7 +139,7 @@
 			// 
 			this.mniViewModel.Name = "mniViewModel";
 			this.mniViewModel.Size = new System.Drawing.Size(138, 22);
-			this.mniViewModel.Text = "&EntryModel";
+			this.mniViewModel.Text = "Entry &Model";
 			// 
 			// mniViewSpreadsheet
 			// 
@@ -263,7 +263,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(529, 324);
+			this.ClientSize = new System.Drawing.Size(404, 195);
 			this.Controls.Add(this.grpStatistics);
 			this.Controls.Add(this.grpDocStatus);
 			this.Controls.Add(this.stpStatus);
