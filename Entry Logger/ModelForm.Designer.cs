@@ -102,6 +102,7 @@
 			this.cmbType.Name = "cmbType";
 			this.cmbType.Size = new System.Drawing.Size(122, 23);
 			this.cmbType.TabIndex = 4;
+			this.cmbType.SelectedIndex = 0;
 			// 
 			// label2
 			// 
