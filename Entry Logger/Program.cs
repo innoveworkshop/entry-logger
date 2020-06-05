@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,22 +13,8 @@ namespace EntryLogger {
 		/// </summary>
 		[STAThread]
 		static void Main() {
-			// Build a test document.
-			/*ELDocument elDocument = new ELDocument();
-			for (int i = 0; i < 5; i++) {
-				elDocument.Model.AddColumn(new Column("Column " + i));
-			}
-			for (int i = 0; i < 10; i++) {
-				Entry entry = new Entry();
-
-				for (int j = 0; j < 5; j++) {
-					entry.Add("Column " + j + " Row " + i);
-				}
-
-				elDocument.Entries.Add(entry);
-			}*/
-
-			string exampleFile = @"C:\Users\Nathan Campos\Documents\Development\Projects\Entry Logger\Desktop\test.eld";
+			string projectPath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath) , @"..\..\..\..\"));
+			string exampleFile = Path.GetFullPath(Path.Combine(projectPath,	@"test.eld"));
 			DocumentParser parser = new DocumentParser(exampleFile);
 
 			// Setup and run the application.
