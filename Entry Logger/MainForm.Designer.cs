@@ -61,7 +61,7 @@
             this.mniHelp});
 			this.mnuMain.Location = new System.Drawing.Point(0, 0);
 			this.mnuMain.Name = "mnuMain";
-			this.mnuMain.Size = new System.Drawing.Size(404, 24);
+			this.mnuMain.Size = new System.Drawing.Size(277, 24);
 			this.mnuMain.TabIndex = 0;
 			this.mnuMain.Text = "menuStrip1";
 			// 
@@ -167,9 +167,9 @@
 			// 
 			this.stpStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
-			this.stpStatus.Location = new System.Drawing.Point(0, 173);
+			this.stpStatus.Location = new System.Drawing.Point(0, 107);
 			this.stpStatus.Name = "stpStatus";
-			this.stpStatus.Size = new System.Drawing.Size(404, 22);
+			this.stpStatus.Size = new System.Drawing.Size(277, 22);
 			this.stpStatus.TabIndex = 1;
 			this.stpStatus.Text = "statusStrip1";
 			// 
@@ -184,7 +184,7 @@
 			this.grpDocStatus.Controls.Add(this.chkEntryModel);
 			this.grpDocStatus.Location = new System.Drawing.Point(8, 27);
 			this.grpDocStatus.Name = "grpDocStatus";
-			this.grpDocStatus.Size = new System.Drawing.Size(134, 73);
+			this.grpDocStatus.Size = new System.Drawing.Size(122, 73);
 			this.grpDocStatus.TabIndex = 2;
 			this.grpDocStatus.TabStop = false;
 			this.grpDocStatus.Text = "Document Status";
@@ -217,9 +217,9 @@
 			this.grpStatistics.Controls.Add(this.label2);
 			this.grpStatistics.Controls.Add(this.lblColumns);
 			this.grpStatistics.Controls.Add(this.label1);
-			this.grpStatistics.Location = new System.Drawing.Point(8, 106);
+			this.grpStatistics.Location = new System.Drawing.Point(136, 27);
 			this.grpStatistics.Name = "grpStatistics";
-			this.grpStatistics.Size = new System.Drawing.Size(134, 59);
+			this.grpStatistics.Size = new System.Drawing.Size(134, 73);
 			this.grpStatistics.TabIndex = 3;
 			this.grpStatistics.TabStop = false;
 			this.grpStatistics.Text = "Document Statistics";
@@ -264,7 +264,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(404, 195);
+			this.ClientSize = new System.Drawing.Size(277, 129);
 			this.Controls.Add(this.grpStatistics);
 			this.Controls.Add(this.grpDocStatus);
 			this.Controls.Add(this.stpStatus);
