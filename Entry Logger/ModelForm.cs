@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -65,11 +66,17 @@ namespace EntryLogger {
 		}
 
 		private void btnRemove_Click(object sender, EventArgs e) {
+			if (lstModels.SelectedIndex < 0)
+				return;
+
 			elDocument.Model.RemoveAt(lstModels.SelectedIndex);
 			PopulateList();
 		}
 
 		private void btnAdd_Click(object sender, EventArgs e) {
+			if (txtName.Text.Length == 0)
+				return;
+
 			elDocument.Model.Add(new Column(txtName.Text, true));
 			PopulateList();
 		}
