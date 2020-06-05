@@ -74,7 +74,9 @@ namespace EntryLogger {
 			if (separatorIndex <= 0)
 				throw new Exception("Invalid model line. Couldn't find the separator '" + ModelSeparator + "'.");
 
-			Column col = new Column(line.Substring(0, separatorIndex));
+			string name = line.Substring(0, separatorIndex);
+			string type = line.Substring(separatorIndex + ModelSeparator.Length);
+			Column col = new Column(name, type);
 			Document.Model.AddColumn(col);
 		}
 
