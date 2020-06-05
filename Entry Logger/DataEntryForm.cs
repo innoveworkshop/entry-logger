@@ -34,8 +34,10 @@ namespace EntryLogger {
 			ClearForm();
 
 			foreach (Column col in elDocument.Model) {
-				layoutTable.Controls.Add(CreateLabel("Hello"), 0, layoutTable.RowCount++);
-				// TODO: Set RowStyles.
+				layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+				layoutTable.Controls.Add(CreateLabel(col.Name), 0, layoutTable.RowCount);
+				layoutTable.Controls.Add(CreateTextBox(col.Name), 1, layoutTable.RowCount);
+				layoutTable.RowCount++;
 			}
 		}
 
@@ -55,10 +57,25 @@ namespace EntryLogger {
 		}
 
 		/// <summary>
+		/// Creates a TextBox control with a name to identify it.
+		/// </summary>
+		/// <param name="name">Name of the TextBox.</param>
+		/// <returns>A prepared TextBox control.</returns>
+		private TextBox CreateTextBox(string name) {
+			TextBox textBox = new TextBox();
+
+			textBox.Dock = DockStyle.Fill;
+			textBox.Name = name;
+
+			return textBox;
+		}
+
+		/// <summary>
 		/// Clears the form's layout table.
 		/// </summary>
 		private void ClearForm() {
 			layoutTable.Controls.Clear();
+			layoutTable.RowStyles.Clear();
 			layoutTable.RowCount = 0;
 		}
 	}
