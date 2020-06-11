@@ -24,6 +24,14 @@
 		}
 
 		/// <summary>
+		/// Returns this object in the same way it would be inside a file.
+		/// </summary>
+		/// <returns>File representation of this object.</returns>
+		public string ToFileFormat() {
+			return $"{Name}: {Type}";
+		}
+
+		/// <summary>
 		/// Returns the string representation of the object.
 		/// </summary>
 		/// <returns>Name of the column.</returns>

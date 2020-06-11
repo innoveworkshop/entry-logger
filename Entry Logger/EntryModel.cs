@@ -18,6 +18,20 @@ namespace EntryLogger {
 		}
 
 		/// <summary>
+		/// Returns this object in the same way it would be inside a file.
+		/// </summary>
+		/// <returns>File representation of this object.</returns>
+		public string ToFileFormat() {
+			StringBuilder str = new StringBuilder();
+
+			foreach (Column col in this) {
+				str.AppendLine(col.ToFileFormat());
+			}
+
+			return str.ToString();
+		}
+
+		/// <summary>
 		/// Returns the string representation of the entry model.
 		/// </summary>
 		/// <returns>A list of the columns with their names.</returns>

@@ -22,6 +22,24 @@ namespace EntryLogger {
 		}
 
 		/// <summary>
+		/// Returns this object in the same way it would be inside a file.
+		/// </summary>
+		/// <returns>File representation of this object.</returns>
+		public string ToFileFormat() {
+			StringBuilder str = new StringBuilder();
+
+			for (int i = 0; i < this.Count; i++) {
+				str.Append(this[i]);
+
+				if (i < (this.Count - 1)) {
+					str.Append("\t");
+				}
+			}
+
+			return str.ToString();
+		}
+
+		/// <summary>
 		/// Returns the string representation of the entry.
 		/// </summary>
 		/// <returns>A list of values.</returns>
@@ -29,7 +47,7 @@ namespace EntryLogger {
 			StringBuilder str = new StringBuilder();
 
 			for (int i = 0; i < this.Count; i++) {
-				str.Append(this[i].ToString());
+				str.Append(this[i]);
 
 				if (i < (this.Count - 1)) {
 					str.Append(", ");

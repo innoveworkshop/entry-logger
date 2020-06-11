@@ -33,7 +33,7 @@ namespace EntryLogger {
 		/// <param name="filePath">Path to the document to be parsed.</param>
 		/// <returns>Object representation of the document.</returns>
 		public ELDocument ParseFile(string filePath) {
-			Document = new ELDocument();
+			Document = new ELDocument(filePath);
 			ParseLines(File.ReadLines(filePath));
 
 			return Document;

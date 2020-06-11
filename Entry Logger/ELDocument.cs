@@ -13,6 +13,49 @@ namespace EntryLogger {
 		public ELDocument() {
 			Model = new EntryModel();
 			Entries = new List<Entry>();
+			FileName = null;
+		}
+
+		/// <summary>
+		/// Constructs an empty Entry Logger document with a file associated.
+		/// </summary>
+		/// <param name="fileName"></param>
+		public ELDocument(string fileName) : this() {
+			FileName = fileName;
+		}
+
+		/// <summary>
+		/// Saves the document to a file.
+		/// </summary>
+		public void Save() {
+			if (!HasFileName())
+				return;
+
+			System.IO.File.WriteAllText(FileName, this.ToFileFormat());
+		}
+
+		/// <summary>
+		/// Returns this object in the same way it would be inside a file.
+		/// </summary>
+		/// <returns>File representation of the document.</returns>
+		public string ToFileFormat() {
+			StringBuilder str = new StringBuilder();
+
+			str.AppendLine(Model.ToFileFormat());
+			str.AppendLine();
+			foreach (Entry entry in Entries) {
+				str.AppendLine(entry.ToFileFormat());
+			}
+
+			return str.ToString();
+		}
+
+		/// <summary>
+		/// Checks if this document has a file associated with it.
+		/// </summary>
+		/// <returns>True if there is a file associated.</returns>
+		public bool HasFileName() {
+			return FileName != null;
 		}
 
 		/// <summary>
@@ -48,6 +91,11 @@ namespace EntryLogger {
 
 			return str.ToString();
 		}
+
+		/// <summary>
+		/// The location of the file of this document.
+		/// </summary>
+		public string FileName { get; set; }
 
 		/// <summary>
 		/// The data model of the document.
