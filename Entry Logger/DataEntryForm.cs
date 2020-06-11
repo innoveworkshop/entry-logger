@@ -35,7 +35,7 @@ namespace EntryLogger {
 
 			foreach (Column col in elDocument.Model) {
 				layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
-				layoutTable.Controls.Add(CreateLabel(col.Name), 0, layoutTable.RowCount);
+				layoutTable.Controls.Add(CreateLabel(col.ToString()), 0, layoutTable.RowCount);
 				layoutTable.Controls.Add(CreateTextBox(col.Name), 1, layoutTable.RowCount);
 				layoutTable.RowCount++;
 			}
