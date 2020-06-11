@@ -8,6 +8,16 @@ namespace EntryLogger {
 	/// Abstration class that represents a user entry.
 	/// </summary>
 	public class Entry : List<string> {
+		/// <summary>
+		/// Initializes an empty entry.
+		/// </summary>
+		public Entry() : base() {
+		}
+
+		/// <summary>
+		/// Initializes an entry with data.
+		/// </summary>
+		/// <param name="collection">Collection of columns to populate this entry.</param>
 		public Entry(IEnumerable<string> collection) : base(collection) {
 		}
 
