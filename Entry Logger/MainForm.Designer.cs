@@ -23,6 +23,7 @@
 		///  the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.mnuMain = new System.Windows.Forms.MenuStrip();
 			this.mniFile = new System.Windows.Forms.ToolStripMenuItem();
 			this.mniFileNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,6 +83,7 @@
 			// 
 			// mniFileNew
 			// 
+			this.mniFileNew.Image = ((System.Drawing.Image)(resources.GetObject("mniFileNew.Image")));
 			this.mniFileNew.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mniFileNew.Name = "mniFileNew";
 			this.mniFileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
@@ -90,6 +92,7 @@
 			// 
 			// mniFileOpen
 			// 
+			this.mniFileOpen.Image = ((System.Drawing.Image)(resources.GetObject("mniFileOpen.Image")));
 			this.mniFileOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mniFileOpen.Name = "mniFileOpen";
 			this.mniFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
@@ -103,6 +106,7 @@
 			// 
 			// mniFileSave
 			// 
+			this.mniFileSave.Image = ((System.Drawing.Image)(resources.GetObject("mniFileSave.Image")));
 			this.mniFileSave.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mniFileSave.Name = "mniFileSave";
 			this.mniFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
@@ -111,6 +115,7 @@
 			// 
 			// mniFileSaveAs
 			// 
+			this.mniFileSaveAs.Image = ((System.Drawing.Image)(resources.GetObject("mniFileSaveAs.Image")));
 			this.mniFileSaveAs.Name = "mniFileSaveAs";
 			this.mniFileSaveAs.Size = new System.Drawing.Size(146, 22);
 			this.mniFileSaveAs.Text = "Save &As";
@@ -122,6 +127,7 @@
 			// 
 			// mniFileExit
 			// 
+			this.mniFileExit.Image = ((System.Drawing.Image)(resources.GetObject("mniFileExit.Image")));
 			this.mniFileExit.Name = "mniFileExit";
 			this.mniFileExit.Size = new System.Drawing.Size(146, 22);
 			this.mniFileExit.Text = "E&xit";
@@ -139,6 +145,7 @@
 			// 
 			// mniViewDataEntry
 			// 
+			this.mniViewDataEntry.Image = ((System.Drawing.Image)(resources.GetObject("mniViewDataEntry.Image")));
 			this.mniViewDataEntry.Name = "mniViewDataEntry";
 			this.mniViewDataEntry.Size = new System.Drawing.Size(138, 22);
 			this.mniViewDataEntry.Text = "&Data Entry";
@@ -146,6 +153,7 @@
 			// 
 			// mniViewModel
 			// 
+			this.mniViewModel.Image = ((System.Drawing.Image)(resources.GetObject("mniViewModel.Image")));
 			this.mniViewModel.Name = "mniViewModel";
 			this.mniViewModel.Size = new System.Drawing.Size(138, 22);
 			this.mniViewModel.Text = "Entry &Model";
@@ -153,6 +161,7 @@
 			// 
 			// mniViewSpreadsheet
 			// 
+			this.mniViewSpreadsheet.Image = ((System.Drawing.Image)(resources.GetObject("mniViewSpreadsheet.Image")));
 			this.mniViewSpreadsheet.Name = "mniViewSpreadsheet";
 			this.mniViewSpreadsheet.Size = new System.Drawing.Size(138, 22);
 			this.mniViewSpreadsheet.Text = "&Spreadsheet";
@@ -168,6 +177,7 @@
 			// 
 			// mniHelpAbout
 			// 
+			this.mniHelpAbout.Image = ((System.Drawing.Image)(resources.GetObject("mniHelpAbout.Image")));
 			this.mniHelpAbout.Name = "mniHelpAbout";
 			this.mniHelpAbout.Size = new System.Drawing.Size(116, 22);
 			this.mniHelpAbout.Text = "&About...";
