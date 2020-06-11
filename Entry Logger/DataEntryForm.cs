@@ -102,6 +102,10 @@ namespace EntryLogger {
 		private void SaveEntry() {
 			Entry entry = new Entry();
 
+			// Check if all fields are empty.
+			if (AllFieldsEmpty())
+				return;
+
 			// Populate the entry with data from the form.
 			foreach (TextBox txtEntry in txtEntries)
 				entry.Add(txtEntry.Text);
@@ -167,6 +171,18 @@ namespace EntryLogger {
 			layoutTable.Controls.Clear();
 			layoutTable.RowStyles.Clear();
 			layoutTable.RowCount = 0;
+		}
+
+		/// <summary>
+		/// Checks if all the entry fields are empty.
+		/// </summary>
+		/// <returns>True if all the fields are empty.</returns>
+		private bool AllFieldsEmpty() {
+			foreach (TextBox txtEntry in txtEntries)
+				if (txtEntry.Text.Length != 0)
+					return false;
+
+			return true;
 		}
 
 		private void DataEntryForm_Activated(object sender, EventArgs e) {
