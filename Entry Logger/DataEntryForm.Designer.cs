@@ -79,6 +79,7 @@
 			this.btnFirst.Name = "btnFirst";
 			this.btnFirst.Size = new System.Drawing.Size(23, 22);
 			this.btnFirst.Text = "First";
+			this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
 			// 
 			// btnPrevious
 			// 
@@ -88,11 +89,14 @@
 			this.btnPrevious.Name = "btnPrevious";
 			this.btnPrevious.Size = new System.Drawing.Size(23, 22);
 			this.btnPrevious.Text = "Previous";
+			this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
 			// 
 			// txtCurrentEntry
 			// 
+			this.txtCurrentEntry.AcceptsReturn = true;
 			this.txtCurrentEntry.Name = "txtCurrentEntry";
 			this.txtCurrentEntry.Size = new System.Drawing.Size(40, 25);
+			this.txtCurrentEntry.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCurrentEntry_KeyDown);
 			// 
 			// lblEntryCount
 			// 
@@ -108,6 +112,7 @@
 			this.btnNext.Name = "btnNext";
 			this.btnNext.Size = new System.Drawing.Size(23, 22);
 			this.btnNext.Text = "Next";
+			this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
 			// 
 			// btnLast
 			// 
@@ -117,6 +122,7 @@
 			this.btnLast.Name = "btnLast";
 			this.btnLast.Size = new System.Drawing.Size(23, 22);
 			this.btnLast.Text = "Last";
+			this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
 			// 
 			// toolStripSeparator1
 			// 
@@ -131,6 +137,7 @@
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(23, 22);
 			this.btnSave.Text = "Save";
+			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
 			// btnDelete
 			// 
@@ -140,6 +147,7 @@
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(23, 22);
 			this.btnDelete.Text = "Delete";
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// DataEntryForm
 			// 

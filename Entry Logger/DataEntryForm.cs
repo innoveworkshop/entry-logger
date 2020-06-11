@@ -89,7 +89,7 @@ namespace EntryLogger {
 			btnPrevious.Enabled = (currentIndex > 0);
 
 			// Next buttons.
-			btnLast.Enabled = (currentIndex < elDocument.Entries.Count);
+			btnLast.Enabled = (currentIndex < (elDocument.Entries.Count - 1));
 			btnNext.Enabled = (currentIndex < elDocument.Entries.Count);
 		}
 
@@ -141,6 +141,54 @@ namespace EntryLogger {
 
 		private void DataEntryForm_Activated(object sender, EventArgs e) {
 			UpdateToolbar();
+		}
+
+		private void btnFirst_Click(object sender, EventArgs e) {
+			currentIndex = 0;
+			UpdateUI();
+		}
+
+		private void btnPrevious_Click(object sender, EventArgs e) {
+			if (currentIndex > 0)
+				currentIndex--;
+
+			UpdateUI();
+		}
+
+		private void btnNext_Click(object sender, EventArgs e) {
+			if (currentIndex < elDocument.Entries.Count)
+				currentIndex++;
+
+			UpdateUI();
+		}
+
+		private void btnLast_Click(object sender, EventArgs e) {
+			currentIndex = elDocument.Entries.Count;
+			UpdateUI();
+		}
+
+		private void btnSave_Click(object sender, EventArgs e) {
+			// TODO: Sync changes.
+		}
+
+		private void btnDelete_Click(object sender, EventArgs e) {
+			// TODO: Delete item.
+		}
+
+		private void txtCurrentEntry_KeyDown(object sender, KeyEventArgs e) {
+			if (e.KeyCode == Keys.Enter) {
+				int index = int.Parse(txtCurrentEntry.Text);
+
+				if (index > elDocument.Entries.Count) {
+					currentIndex = elDocument.Entries.Count;
+				} else if (index <= 0) {
+					currentIndex = 0;
+				} else {
+					currentIndex = index;
+				}
+
+				UpdateUI();
+			}
 		}
 	}
 }
