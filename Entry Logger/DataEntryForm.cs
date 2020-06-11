@@ -91,6 +91,35 @@ namespace EntryLogger {
 			// Next buttons.
 			btnLast.Enabled = (currentIndex < (elDocument.Entries.Count - 1));
 			btnNext.Enabled = (currentIndex < elDocument.Entries.Count);
+
+			// Trash button.
+			btnDelete.Enabled = (currentIndex < elDocument.Entries.Count);
+		}
+
+		/// <summary>
+		/// Syncs data from this form to the currently selected entry item in the document.
+		/// </summary>
+		private void SaveEntry() {
+			Entry entry = new Entry();
+
+			// Populate the entry with data from the form.
+			foreach (TextBox txtEntry in txtEntries)
+				entry.Add(txtEntry.Text);
+
+			// Check if we are creating a new entry or updating one.
+			if (currentIndex == elDocument.Entries.Count) {
+				elDocument.Entries.Add(entry);
+			} else {
+				elDocument.Entries[currentIndex] = entry;
+			}
+		}
+
+		/// <summary>
+		/// Deletes the current entry.
+		/// </summary>
+		private void DeleteEntry() {
+			if (currentIndex < elDocument.Entries.Count)
+				elDocument.Entries.RemoveAt(currentIndex);
 		}
 
 		/// <summary>
@@ -168,11 +197,13 @@ namespace EntryLogger {
 		}
 
 		private void btnSave_Click(object sender, EventArgs e) {
-			// TODO: Sync changes.
+			SaveEntry();
+			UpdateUI();
 		}
 
 		private void btnDelete_Click(object sender, EventArgs e) {
-			// TODO: Delete item.
+			DeleteEntry();
+			UpdateUI();
 		}
 
 		private void txtCurrentEntry_KeyDown(object sender, KeyEventArgs e) {
