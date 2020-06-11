@@ -132,6 +132,8 @@ namespace EntryLogger {
 		private void UpdateUI() {
 			UpdateToolbar();
 			PopulateEntry();
+
+			txtEntries[0].Focus();
 		}
 
 		/// <summary>
