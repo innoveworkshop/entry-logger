@@ -257,5 +257,9 @@ namespace EntryLogger {
 				UpdateUI();
 			}
 		}
+
+		private void DataEntryForm_FormClosing(object sender, FormClosingEventArgs e) {
+			SaveEntry();
+		}
 	}
 }

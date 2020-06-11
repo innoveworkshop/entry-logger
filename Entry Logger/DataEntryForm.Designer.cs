@@ -160,6 +160,7 @@
 			this.Name = "DataEntryForm";
 			this.Text = "Data Entry";
 			this.Activated += new System.EventHandler(this.DataEntryForm_Activated);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DataEntryForm_FormClosing);
 			this.toolStrip.ResumeLayout(false);
 			this.toolStrip.PerformLayout();
 			this.ResumeLayout(false);
