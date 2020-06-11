@@ -10,12 +10,15 @@ using System.Windows.Forms;
 namespace EntryLogger {
 	public partial class DataEntryForm : Form {
 		private ELDocument elDocument;
+		private int currentIndex;
+		private List<TextBox> txtEntries;
 
 		/// <summary>
 		/// Contructs an empty data entry form.
 		/// </summary>
 		public DataEntryForm() {
 			InitializeComponent();
+			txtEntries = new List<TextBox>();
 		}
 
 		/// <summary>
@@ -35,15 +38,67 @@ namespace EntryLogger {
 
 			// Go through the list of columns in the model and populate the table.
 			foreach (Column col in elDocument.Model) {
+				txtEntries.Add(CreateTextBox(col.Name));
+
 				layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
 				layoutTable.Controls.Add(CreateLabel(col.ToString()), 0, layoutTable.RowCount);
-				layoutTable.Controls.Add(CreateTextBox(col.Name), 1, layoutTable.RowCount);
+				layoutTable.Controls.Add(txtEntries[txtEntries.Count - 1], 1, layoutTable.RowCount);
 				layoutTable.RowCount++;
 			}
 
 			// Add an extra row to size the others properly.
 			layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
 			layoutTable.RowCount++;
+
+			// Update the counters and update the UI.
+			currentIndex = elDocument.Entries.Count;
+			UpdateUI();
+		}
+
+		/// <summary>
+		/// Populates the form with data from the current entry.
+		/// </summary>
+		private void PopulateEntry() {
+			// Looks like a new entry.
+			if (currentIndex == elDocument.Entries.Count) {
+				// Clear all the entry fields.
+				foreach (TextBox txtEntry in txtEntries) {
+					txtEntry.Clear();
+				}
+
+				return;
+			}
+
+			// Populate the entry fields with data from the currently selected entry.
+			Entry entry = elDocument.Entries[currentIndex];
+			for (int i = 0; i < elDocument.Model.Count; i++) {
+				txtEntries[i].Text = entry[i];
+			}
+		}
+
+		/// <summary>
+		/// Updates the various dynamic items in the toolbar.
+		/// </summary>
+		private void UpdateToolbar() {
+			// Counters.
+			lblEntryCount.Text = $"/ {elDocument.Entries.Count}";
+			txtCurrentEntry.Text = (currentIndex + 1).ToString();
+
+			// Previous buttons.
+			btnFirst.Enabled = (currentIndex > 0);
+			btnPrevious.Enabled = (currentIndex > 0);
+
+			// Next buttons.
+			btnLast.Enabled = (currentIndex < elDocument.Entries.Count);
+			btnNext.Enabled = (currentIndex < elDocument.Entries.Count);
+		}
+
+		/// <summary>
+		/// Updates the user interface elements according to the current entry index.
+		/// </summary>
+		private void UpdateUI() {
+			UpdateToolbar();
+			PopulateEntry();
 		}
 
 		/// <summary>
@@ -82,6 +137,10 @@ namespace EntryLogger {
 			layoutTable.Controls.Clear();
 			layoutTable.RowStyles.Clear();
 			layoutTable.RowCount = 0;
+		}
+
+		private void DataEntryForm_Activated(object sender, EventArgs e) {
+			UpdateToolbar();
 		}
 	}
 }
