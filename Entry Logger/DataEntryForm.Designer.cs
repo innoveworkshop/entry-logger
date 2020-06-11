@@ -95,7 +95,8 @@
 			// 
 			this.txtCurrentEntry.AcceptsReturn = true;
 			this.txtCurrentEntry.Name = "txtCurrentEntry";
-			this.txtCurrentEntry.Size = new System.Drawing.Size(40, 25);
+			this.txtCurrentEntry.Size = new System.Drawing.Size(30, 25);
+			this.txtCurrentEntry.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.txtCurrentEntry.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCurrentEntry_KeyDown);
 			// 
 			// lblEntryCount
