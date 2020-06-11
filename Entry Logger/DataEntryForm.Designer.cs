@@ -23,10 +23,19 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataEntryForm));
 			this.layoutTable = new System.Windows.Forms.TableLayoutPanel();
-			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.layoutTable.SuspendLayout();
+			this.toolStrip = new System.Windows.Forms.ToolStrip();
+			this.btnFirst = new System.Windows.Forms.ToolStripButton();
+			this.btnPrevious = new System.Windows.Forms.ToolStripButton();
+			this.txtCurrentEntry = new System.Windows.Forms.ToolStripTextBox();
+			this.lblEntryCount = new System.Windows.Forms.ToolStripLabel();
+			this.btnNext = new System.Windows.Forms.ToolStripButton();
+			this.btnLast = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.btnSave = new System.Windows.Forms.ToolStripButton();
+			this.btnDelete = new System.Windows.Forms.ToolStripButton();
+			this.toolStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// layoutTable
@@ -38,48 +47,118 @@
 			this.layoutTable.ColumnCount = 2;
 			this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
 			this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-			this.layoutTable.Controls.Add(this.label1, 0, 0);
-			this.layoutTable.Controls.Add(this.textBox1, 1, 0);
-			this.layoutTable.Location = new System.Drawing.Point(12, 12);
+			this.layoutTable.Location = new System.Drawing.Point(12, 28);
 			this.layoutTable.Name = "layoutTable";
 			this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 264F));
-			this.layoutTable.Size = new System.Drawing.Size(282, 264);
+			this.layoutTable.Size = new System.Drawing.Size(282, 125);
 			this.layoutTable.TabIndex = 0;
 			// 
-			// label1
+			// toolStrip
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(3, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(38, 15);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "label1";
+			this.toolStrip.Location = new System.Drawing.Point(0, 0);
+			this.toolStrip.Name = "toolStrip";
+			this.toolStrip.Size = new System.Drawing.Size(306, 25);
+			this.toolStrip.TabIndex = 1;
+			this.toolStrip.Text = "toolStrip";
 			// 
-			// textBox1
+			// btnFirst
 			// 
-			this.textBox1.Location = new System.Drawing.Point(47, 3);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(100, 23);
-			this.textBox1.TabIndex = 1;
+			this.btnFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
+			this.btnFirst.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btnFirst.Name = "btnFirst";
+			this.btnFirst.Size = new System.Drawing.Size(23, 22);
+			this.btnFirst.Text = "First";
+			// 
+			// btnPrevious
+			// 
+			this.btnPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
+			this.btnPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btnPrevious.Name = "btnPrevious";
+			this.btnPrevious.Size = new System.Drawing.Size(23, 22);
+			this.btnPrevious.Text = "Previous";
+			// 
+			// txtCurrentEntry
+			// 
+			this.txtCurrentEntry.Name = "txtCurrentEntry";
+			this.txtCurrentEntry.Size = new System.Drawing.Size(40, 25);
+			// 
+			// lblEntryCount
+			// 
+			this.lblEntryCount.Name = "lblEntryCount";
+			this.lblEntryCount.Size = new System.Drawing.Size(39, 22);
+			this.lblEntryCount.Text = "/ xxxx";
+			// 
+			// btnNext
+			// 
+			this.btnNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+			this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btnNext.Name = "btnNext";
+			this.btnNext.Size = new System.Drawing.Size(23, 22);
+			this.btnNext.Text = "Next";
+			// 
+			// btnLast
+			// 
+			this.btnLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
+			this.btnLast.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btnLast.Name = "btnLast";
+			this.btnLast.Size = new System.Drawing.Size(23, 22);
+			this.btnLast.Text = "Last";
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+			// 
+			// btnSave
+			// 
+			this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+			this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btnSave.Name = "btnSave";
+			this.btnSave.Size = new System.Drawing.Size(23, 22);
+			this.btnSave.Text = "Save";
+			// 
+			// btnDelete
+			// 
+			this.btnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+			this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Size = new System.Drawing.Size(23, 22);
+			this.btnDelete.Text = "Delete";
 			// 
 			// DataEntryForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(306, 288);
+			this.ClientSize = new System.Drawing.Size(306, 165);
+			this.Controls.Add(this.toolStrip);
 			this.Controls.Add(this.layoutTable);
 			this.Name = "DataEntryForm";
 			this.Text = "Data Entry";
-			this.layoutTable.ResumeLayout(false);
-			this.layoutTable.PerformLayout();
+			this.toolStrip.ResumeLayout(false);
+			this.toolStrip.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
 		#endregion
 
 		private System.Windows.Forms.TableLayoutPanel layoutTable;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.ToolStrip toolStrip;
+		private System.Windows.Forms.ToolStripButton btnFirst;
+		private System.Windows.Forms.ToolStripButton btnPrevious;
+		private System.Windows.Forms.ToolStripTextBox txtCurrentEntry;
+		private System.Windows.Forms.ToolStripLabel lblEntryCount;
+		private System.Windows.Forms.ToolStripButton btnNext;
+		private System.Windows.Forms.ToolStripButton btnLast;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.ToolStripButton btnSave;
+		private System.Windows.Forms.ToolStripButton btnDelete;
 	}
 }
