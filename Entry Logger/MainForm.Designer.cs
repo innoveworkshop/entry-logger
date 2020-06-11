@@ -49,6 +49,8 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.lblColumns = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
+			this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
+			this.dlgSave = new System.Windows.Forms.SaveFileDialog();
 			this.mnuMain.SuspendLayout();
 			this.stpStatus.SuspendLayout();
 			this.grpDocStatus.SuspendLayout();
@@ -89,6 +91,7 @@
 			this.mniFileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
 			this.mniFileNew.Size = new System.Drawing.Size(146, 22);
 			this.mniFileNew.Text = "&New";
+			this.mniFileNew.Click += new System.EventHandler(this.mniFileNew_Click);
 			// 
 			// mniFileOpen
 			// 
@@ -98,6 +101,7 @@
 			this.mniFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
 			this.mniFileOpen.Size = new System.Drawing.Size(146, 22);
 			this.mniFileOpen.Text = "&Open";
+			this.mniFileOpen.Click += new System.EventHandler(this.mniFileOpen_Click);
 			// 
 			// toolStripSeparator
 			// 
@@ -112,6 +116,7 @@
 			this.mniFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
 			this.mniFileSave.Size = new System.Drawing.Size(146, 22);
 			this.mniFileSave.Text = "&Save";
+			this.mniFileSave.Click += new System.EventHandler(this.mniFileSave_Click);
 			// 
 			// mniFileSaveAs
 			// 
@@ -119,6 +124,7 @@
 			this.mniFileSaveAs.Name = "mniFileSaveAs";
 			this.mniFileSaveAs.Size = new System.Drawing.Size(146, 22);
 			this.mniFileSaveAs.Text = "Save &As";
+			this.mniFileSaveAs.Click += new System.EventHandler(this.mniFileSaveAs_Click);
 			// 
 			// toolStripSeparator1
 			// 
@@ -186,7 +192,7 @@
 			// 
 			this.stpStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
-			this.stpStatus.Location = new System.Drawing.Point(0, 107);
+			this.stpStatus.Location = new System.Drawing.Point(0, 105);
 			this.stpStatus.Name = "stpStatus";
 			this.stpStatus.Size = new System.Drawing.Size(277, 22);
 			this.stpStatus.TabIndex = 1;
@@ -279,11 +285,22 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Columns: ";
 			// 
+			// dlgOpen
+			// 
+			this.dlgOpen.DefaultExt = "eld";
+			this.dlgOpen.Filter = "Entry Logger Document|*.eld|All files|*.*";
+			this.dlgOpen.Title = "Open Document";
+			// 
+			// dlgSave
+			// 
+			this.dlgSave.DefaultExt = "eld";
+			this.dlgSave.Filter = "Entry Logger Document|*.eld|All files|*.*";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(277, 129);
+			this.ClientSize = new System.Drawing.Size(277, 127);
 			this.Controls.Add(this.grpStatistics);
 			this.Controls.Add(this.grpDocStatus);
 			this.Controls.Add(this.stpStatus);
@@ -331,6 +348,8 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblEntries;
 		private System.Windows.Forms.ToolStripMenuItem mniViewDataEntry;
+		private System.Windows.Forms.OpenFileDialog dlgOpen;
+		private System.Windows.Forms.SaveFileDialog dlgSave;
 	}
 }
 
