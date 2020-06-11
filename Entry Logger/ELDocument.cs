@@ -41,7 +41,7 @@ namespace EntryLogger {
 		public string ToFileFormat() {
 			StringBuilder str = new StringBuilder();
 
-			str.AppendLine(Model.ToFileFormat());
+			str.Append(Model.ToFileFormat());
 			str.AppendLine();
 			foreach (Entry entry in Entries) {
 				str.AppendLine(entry.ToFileFormat());
