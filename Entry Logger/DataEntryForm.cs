@@ -155,6 +155,7 @@ namespace EntryLogger {
 
 			textBox.Dock = DockStyle.Fill;
 			textBox.Name = name;
+			textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEntry_KeyDown);
 
 			return textBox;
 		}
@@ -173,11 +174,15 @@ namespace EntryLogger {
 		}
 
 		private void btnFirst_Click(object sender, EventArgs e) {
+			SaveEntry();
+
 			currentIndex = 0;
 			UpdateUI();
 		}
 
 		private void btnPrevious_Click(object sender, EventArgs e) {
+			SaveEntry();
+
 			if (currentIndex > 0)
 				currentIndex--;
 
@@ -185,6 +190,8 @@ namespace EntryLogger {
 		}
 
 		private void btnNext_Click(object sender, EventArgs e) {
+			SaveEntry();
+
 			if (currentIndex < elDocument.Entries.Count)
 				currentIndex++;
 
@@ -192,6 +199,8 @@ namespace EntryLogger {
 		}
 
 		private void btnLast_Click(object sender, EventArgs e) {
+			SaveEntry();
+
 			currentIndex = elDocument.Entries.Count;
 			UpdateUI();
 		}
@@ -218,6 +227,15 @@ namespace EntryLogger {
 					currentIndex = index;
 				}
 
+				UpdateUI();
+			}
+		}
+
+		private void txtEntry_KeyDown(object sender, KeyEventArgs e) {
+			if (e.KeyCode == Keys.Enter) {
+				SaveEntry();
+
+				currentIndex++;
 				UpdateUI();
 			}
 		}
