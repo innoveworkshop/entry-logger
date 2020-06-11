@@ -51,6 +51,19 @@ namespace EntryLogger {
 		}
 
 		/// <summary>
+		/// Adds the entered model to the document and updates the UI.
+		/// </summary>
+		public void AddEnteredModel() {
+			if (txtName.Text.Length == 0)
+				return;
+
+			elDocument.Model.Add(new Column(txtName.Text, cmbType.Text, true));
+			PopulateList();
+
+			txtName.Clear();
+		}
+
+		/// <summary>
 		/// Clears the entry model list and optionally syncs this change to the associated document.
 		/// </summary>
 		/// <param name="sync">Should we sync this change with the associated document?</param>
@@ -74,11 +87,7 @@ namespace EntryLogger {
 		}
 
 		private void btnAdd_Click(object sender, EventArgs e) {
-			if (txtName.Text.Length == 0)
-				return;
-
-			elDocument.Model.Add(new Column(txtName.Text, cmbType.Text, true));
-			PopulateList();
+			AddEnteredModel();
 		}
 
 		private void btnMoveUp_Click(object sender, EventArgs e) {
@@ -110,6 +119,13 @@ namespace EntryLogger {
 			// Repopulate list and reselect the item.
 			PopulateList();
 			lstModels.SelectedIndex = selectedIndex + 1;
+		}
+
+		private void txtName_KeyDown(object sender, KeyEventArgs e) {
+			if (e.KeyCode == Keys.Enter) {
+				AddEnteredModel();
+				txtName.Focus();
+			}
 		}
 	}
 }

@@ -89,6 +89,7 @@
 			this.txtName.Name = "txtName";
 			this.txtName.Size = new System.Drawing.Size(158, 23);
 			this.txtName.TabIndex = 3;
+			this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
 			// 
 			// cmbType
 			// 
@@ -102,7 +103,6 @@
 			this.cmbType.Name = "cmbType";
 			this.cmbType.Size = new System.Drawing.Size(122, 23);
 			this.cmbType.TabIndex = 4;
-			this.cmbType.SelectedIndex = 0;
 			// 
 			// label2
 			// 
