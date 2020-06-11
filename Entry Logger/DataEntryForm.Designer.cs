@@ -55,6 +55,16 @@
 			// 
 			// toolStrip
 			// 
+			this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnFirst,
+            this.btnPrevious,
+            this.txtCurrentEntry,
+            this.lblEntryCount,
+            this.btnNext,
+            this.btnLast,
+            this.toolStripSeparator1,
+            this.btnSave,
+            this.btnDelete});
 			this.toolStrip.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip.Name = "toolStrip";
 			this.toolStrip.Size = new System.Drawing.Size(306, 25);
@@ -140,6 +150,7 @@
 			this.Controls.Add(this.layoutTable);
 			this.Name = "DataEntryForm";
 			this.Text = "Data Entry";
+			this.Activated += new System.EventHandler(this.DataEntryForm_Activated);
 			this.toolStrip.ResumeLayout(false);
 			this.toolStrip.PerformLayout();
 			this.ResumeLayout(false);
