@@ -46,7 +46,7 @@ namespace EntryLogger {
 
 			// Populate the columns.
 			for (int i = 0; i < elDocument.Model.Count; i++) {
-				grdSpreadsheet.Columns[i].Name = elDocument.Model[i].Name;
+				grdSpreadsheet.Columns[i].Name = elDocument.Model[i].ToString();
 			}
 		}
 
